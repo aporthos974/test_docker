@@ -15,5 +15,3 @@ jobs:
         run: go build .
   Unit-Tests:
     uses: ./.github/workflows/unit-tests.yml
-  Deployment:
-    uses: ./.github/workflows/deployment.yml
