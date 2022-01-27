@@ -1,5 +1,5 @@
 name: Unit-tests
-on: []
+on: workflow_call
 jobs:
   Unit-tests:
     runs-on: ubuntu-latest
