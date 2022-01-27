@@ -1,8 +1,5 @@
 name: Deployment
-on:
-  workflow_run:
-    workflows: ["Build"]
-    types: [complete]
+on: workflow_call
 jobs:
   Build:
     runs-on: ubuntu-latest
