@@ -13,6 +13,6 @@ jobs:
           ls ${{ github.workspace }}
       - name: Build project
         run: go build .
-      - uses: ./.github/actions/Unit-tests
-      - uses: ./.github/actions/Deployment
+      - uses: ./.github/actions/unit-tests
+      - uses: ./.github/actions/deployment
       - run: echo "🍏 This job's status is ${{ job.status }}."
