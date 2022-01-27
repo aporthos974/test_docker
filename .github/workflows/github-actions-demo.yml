@@ -1,7 +1,9 @@
-name: GitHub Actions Demo
-on: [push]
+name: Build
+on:
+  push:
+  workflow_dispatch:
 jobs:
-  Explore-GitHub-Actions:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,6 +15,9 @@ jobs:
           ls ${{ github.workspace }}
       - name: Build project
         run: go build .
-      - name: Unit tests
-        run: go test .
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+  tests:
+    uses: ./.github/workflows/unit-tests.yml
+    needs: [build]
+  deployment:
+    uses: ./.github/workflows/deployment.yml
+    needs: [tests]
