@@ -1,5 +1,5 @@
 name: Deployment
-on: []
+on: workflow_call
 jobs:
   Build:
     runs-on: ubuntu-latest
